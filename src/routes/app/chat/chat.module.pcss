@@ -26,12 +26,21 @@
   position: relative;
 }
 
+:where([data-mantine-color-scheme='dark']) .writebar {
+  border-top: calc(0.0625rem * var(--mantine-scale)) solid
+    var(--mantine-color-dark-4);
+}
+
 .message-wrapper {
   width: fit-content;
   max-width: 600px;
   word-break: break-word;
-  background-color: var(--mantine-primary-color-4);
+  background-color: var(--mantine-primary-color-3);
   border-radius: var(--mantine-radius-sm);
+}
+
+:where([data-mantine-color-scheme='dark']) .message-wrapper {
+  background-color: var(--mantine-primary-color-9);
 }
 
 .message-container {
@@ -63,6 +72,11 @@
   background-color: var(--mantine-color-body);
 }
 
+:where([data-mantine-color-scheme='dark']) .attachment-panel {
+  border-top: calc(0.0625rem * var(--mantine-scale)) solid
+    var(--mantine-color-dark-4);
+}
+
 .message {
   display: flex;
   flex-direction: column;
@@ -73,7 +87,12 @@
 
   &--text {
     white-space: pre-wrap;
+    color: var(--mantine-color-text);
   }
+}
+
+:where([data-mantine-color-scheme='dark']) .message {
+  background-color: var(--mantine-primary-color-9);
 }
 
 .chatbox > div > div {
