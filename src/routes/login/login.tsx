@@ -1,4 +1,4 @@
-import { FC, FormEventHandler, useContext } from 'react'
+import { FC, useContext } from 'react'
 import { Button, Container, Paper, TextInput, Title } from '@mantine/core'
 
 import styles from './login.module.pcss'
