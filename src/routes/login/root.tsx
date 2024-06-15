@@ -5,7 +5,7 @@ import { LoginHeader } from '@components/login-header'
 
 export const LoginRoot: FC = () => {
   return (
-    <AppShell header={{height: 56}}>
+    <AppShell header={{ height: 56 }}>
       <AppShell.Header>
         <LoginHeader />
       </AppShell.Header>
