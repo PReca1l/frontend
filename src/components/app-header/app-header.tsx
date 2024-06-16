@@ -1,6 +1,6 @@
 import { FC, useContext } from 'react'
 // @ts-ignore
-import RosatomLogo from '@assets/rosatom_logo.svg?react'
+import RosatomLogo from '@assets/rosatom_logo.svg'
 import {
   ActionIcon,
   Button,
@@ -25,7 +25,7 @@ export const AppHeader: FC = () => {
   return (
     <div className={styles.header}>
       <div className={styles.inner}>
-        <RosatomLogo width={42} height={42} />
+        <img src={RosatomLogo} width={42} height={42} />
         <div>
           <Title order={4} ta={'center'}>
             Чат
