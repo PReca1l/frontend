@@ -53,7 +53,7 @@ export const Chat: FC = () => {
   const [file, setFile] = useState<File | null>(null)
   const { username } = useContext(AuthContext)
   const { sendJsonMessage, lastJsonMessage, readyState, getWebSocket } =
-    useWebSocket('ws://localhost:8000/ws/' + username, {
+    useWebSocket('ws://37.140.241.11:8000/ws/' + username, {
       shouldReconnect: (_) => true,
       reconnectAttempts: 10
     })
@@ -112,7 +112,7 @@ export const Chat: FC = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8000/history/' + username)
+      .get('http://37.140.241.11:8000/history/' + username)
       .then((r) => console.log(r))
   }, [])
 
@@ -223,7 +223,7 @@ export const Chat: FC = () => {
               const message_uuid = uuidv4()
               const msg = {
                 id: message_uuid,
-                message: text,
+                text,
                 username
               }
 
@@ -233,7 +233,7 @@ export const Chat: FC = () => {
               formData.append('username', username!)
 
               axios
-                .post('http://localhost:8000/upload', formData)
+                .post('http://37.140.241.11:8000/upload', formData)
                 .then((r) => {
                   console.log(msg, r)
                   sendJsonMessage(msg)
